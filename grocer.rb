@@ -51,7 +51,7 @@ def checkout(cart, coupons)
   subtotal = apply_clearance(cart)
   total = 0
   subtotal.each do |name, properties|
-    total = properties[:price] * properties[:count]
+    total += properties[:price] * properties[:count]
   end
   total = total * 0.9 if total > 100
   total
